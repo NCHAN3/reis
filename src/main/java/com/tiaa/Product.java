@@ -7,8 +7,9 @@ public class Product {
     private boolean isBolt1Exist;
     private boolean isBolt2Exist;
     private boolean isMachineExist;
+    private boolean isProductReady;
 
-    Product(int productId){
+    Product(){
     }
 
     void setBolt1Exist() {
@@ -23,7 +24,7 @@ public class Product {
         isMachineExist = true;
     }
 
-    public boolean isAllItemsAvailable(){
-        return isBolt1Exist && isBolt2Exist && isMachineExist;
+    public void setProductReady(){
+        isProductReady = isBolt1Exist && isBolt2Exist && isMachineExist;
     }
 }

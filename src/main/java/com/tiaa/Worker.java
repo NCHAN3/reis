@@ -43,7 +43,7 @@ public class Worker implements Callable {
 
         }else if (itemIndex%3 == workerId && item.getType() == ItemType.MACHINE){
 
-            Product p = new Product(itemIndex);
+            Product p = new Product();
             p.setMachineExist();
             unFinishedProduct.offer(p);
             createProduct();
@@ -57,11 +57,11 @@ public class Worker implements Callable {
         if(p!= null && boltList.size() >=2){
             p.setBolt1Exist();
             p.setBolt2Exist();
+            p.setProductReady();
             boltList.remove();
             boltList.remove();
-            finishedProduct.add(unFinishedProduct.remove());
-        }else{
             Thread.sleep(sleepTime);
+            finishedProduct.add(unFinishedProduct.remove());
         }
     }
 

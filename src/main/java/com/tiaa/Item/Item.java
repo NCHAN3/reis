@@ -8,7 +8,6 @@ package com.tiaa.Item;
 
 public class Item {
 
-
     private ItemType type;
     private int index;
 

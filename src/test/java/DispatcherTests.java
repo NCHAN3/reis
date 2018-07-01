@@ -14,9 +14,9 @@ public class DispatcherTests {
     @Test
     public void processWorkers() throws ExecutionException, InterruptedException {
 
-        int noOfBolts = 900;
-        int noOfMachines = 100;
-        int sleepTime = 60;
+        int noOfBolts = 6;
+        int noOfMachines = 3;
+        long sleepTime = 60;
         Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines, sleepTime);
         assertEquals(noOfMachines, dispatcher.processWorkers());
 
@@ -25,9 +25,20 @@ public class DispatcherTests {
     @Test
     public void processWorkersFailed() throws ExecutionException, InterruptedException {
 
-        int noOfBolts = 900;
-        int noOfMachines = 100;
-        int sleepTime = 60;
+        int noOfBolts = 6;
+        int noOfMachines = 3;
+        long sleepTime = 60;
+        Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines, sleepTime);
+        assertNotEquals(noOfBolts, dispatcher.processWorkers());
+
+    }
+
+    @Test
+    public void processWorkersExecutionTimeTest() throws ExecutionException, InterruptedException {
+
+        int noOfBolts = 6;
+        int noOfMachines = 3;
+        long sleepTime = 60;
         Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines, sleepTime);
         assertNotEquals(noOfBolts, dispatcher.processWorkers());
 

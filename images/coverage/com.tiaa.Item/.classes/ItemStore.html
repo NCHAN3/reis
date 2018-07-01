@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ItemStore</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.tiaa.Item</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ItemStore (com.tiaa.Item)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ItemStore</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/ 17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.tiaa.Item;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.*;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * Created by navchand0 on 6/30/2018.
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;public class ItemStore{
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    private int noOfBolts;
+<i>11</i>&nbsp;    private int noOfMachines;
+<i>12</i>&nbsp;    private int totalItems;
+<i>13</i>&nbsp;    private Item[] items;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    public ItemStore(int noOfBolts, int noOfMachines){</b>
+<b class="fc"><i>16</i>&nbsp;        this.noOfBolts = noOfBolts;</b>
+<b class="fc"><i>17</i>&nbsp;        this.noOfMachines = noOfMachines;</b>
+<b class="fc"><i>18</i>&nbsp;        this.totalItems = noOfBolts + noOfMachines;</b>
+<b class="fc"><i>19</i>&nbsp;        CreateItems();</b>
+<b class="fc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private void CreateItems(){
+<b class="fc"><i>23</i>&nbsp;        items = new Item[totalItems];</b>
+<b class="fc"><i>24</i>&nbsp;        List&lt;Item&gt; itemsList = new ArrayList&lt;&gt;();</b>
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;        for(int i =0; i &lt; noOfBolts; i++){</b>
+<b class="fc"><i>27</i>&nbsp;            itemsList.add(new Item(ItemType.BOLT, i));</b>
+<i>28</i>&nbsp;        }
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;        for(int i =0 ; i &lt; noOfMachines; i++){</b>
+<b class="fc"><i>31</i>&nbsp;            itemsList.add(new Item(ItemType.MACHINE, i));</b>
+<i>32</i>&nbsp;        }
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;        Collections.shuffle(itemsList);</b>
+<i>35</i>&nbsp;
+<b class="fc"><i>36</i>&nbsp;        for(int i=0; i &lt; totalItems; i++){</b>
+<b class="fc"><i>37</i>&nbsp;            items[i]=itemsList.get(i);</b>
+<i>38</i>&nbsp;        }
+<b class="fc"><i>39</i>&nbsp;    }</b>
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public Item[] getItems(){
+<b class="fc"><i>42</i>&nbsp;        return items;</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-07-01 18:03</div>
+</div>
+</body>
+</html>

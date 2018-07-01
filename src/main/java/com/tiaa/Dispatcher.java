@@ -31,13 +31,14 @@ public class Dispatcher {
 
         int totalProduct = 0;
 
-        long startTime = System.currentTimeMillis();
-
         // wrap items with index which will help in assigning these items to worker
         ItemStore store = new ItemStore(noOfBolts, noOfMachines);
 
+
         ExecutorService service = Executors.newFixedThreadPool(3);
         List<Future<Queue<Product>>> futures = new ArrayList<>();
+
+        long startTime = System.currentTimeMillis();
 
         for(int i=0; i< workers; i++){
 
@@ -51,7 +52,7 @@ public class Dispatcher {
         }
 
         System.out.println("Total products = " + totalProduct);
-        System.out.println("Total time taken = " + (System.currentTimeMillis() - startTime)/1000 + "sec");
+        System.out.println("Total time taken = " + (System.currentTimeMillis() - startTime) + "ms");
 
         return totalProduct;
     }
