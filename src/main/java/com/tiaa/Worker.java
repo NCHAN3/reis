@@ -14,6 +14,7 @@ public class Worker implements Callable {
 
     private Item[] conveyorBelt;
     private int workerId;
+    private long sleepTime;
 
     private Queue<Product> finishedProduct = new LinkedList<>();
     private Queue<Product> unFinishedProduct = new LinkedList<>();
@@ -21,9 +22,10 @@ public class Worker implements Callable {
     private Queue<Item> boltList = new LinkedList<>();
 
 
-    Worker(Item[] conveyorBelt, int workerId){
+    Worker(Item[] conveyorBelt, int workerId, long sleepTime){
         this.conveyorBelt = conveyorBelt;
         this.workerId = workerId;
+        this.sleepTime = sleepTime;
     }
 
     /*
@@ -59,7 +61,7 @@ public class Worker implements Callable {
             boltList.remove();
             finishedProduct.add(unFinishedProduct.remove());
         }else{
-            Thread.sleep(50);
+            Thread.sleep(sleepTime);
         }
     }
 

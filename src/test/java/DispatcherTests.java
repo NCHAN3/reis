@@ -16,7 +16,8 @@ public class DispatcherTests {
 
         int noOfBolts = 900;
         int noOfMachines = 100;
-        Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines);
+        int sleepTime = 60;
+        Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines, sleepTime);
         assertEquals(noOfMachines, dispatcher.processWorkers());
 
     }
@@ -26,7 +27,8 @@ public class DispatcherTests {
 
         int noOfBolts = 900;
         int noOfMachines = 100;
-        Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines);
+        int sleepTime = 60;
+        Dispatcher dispatcher = new Dispatcher(noOfBolts,noOfMachines, sleepTime);
         assertNotEquals(noOfBolts, dispatcher.processWorkers());
 
     }

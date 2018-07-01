@@ -18,11 +18,13 @@ public class Dispatcher {
     private int workers;
     private int noOfMachines;
     private int noOfBolts;
+    private long sleepTime;
 
-    public Dispatcher(int noOfBolts, int noOfMachines){
+    public Dispatcher(int noOfBolts, int noOfMachines, long sleepTime){
         this.workers = 3;
         this.noOfBolts = noOfBolts;
         this.noOfMachines = noOfMachines;
+        this.sleepTime = sleepTime;
     }
 
     public int processWorkers() throws ExecutionException, InterruptedException {
@@ -39,7 +41,7 @@ public class Dispatcher {
 
         for(int i=0; i< workers; i++){
 
-            futures.add(service.submit(new Worker(store.getItems(), i)));
+            futures.add(service.submit(new Worker(store.getItems(), i, sleepTime)));
 
         }
 
@@ -49,7 +51,7 @@ public class Dispatcher {
         }
 
         System.out.println("Total products = " + totalProduct);
-        System.out.println("Total time taken = " + (System.currentTimeMillis() - startTime)/1000);
+        System.out.println("Total time taken = " + (System.currentTimeMillis() - startTime)/1000 + "sec");
 
         return totalProduct;
     }
