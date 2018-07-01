@@ -8,8 +8,11 @@ SECTION 2:
 
 SECTION 3:
 
-    Code coverage snapshot:
-    Final Output Snapshot:
+    Code coverage snapshot: http://htmlpreview.github.com/?https://github.com/NCHAN3/reis/blob/master/images/coverage/index.html
+    Final Output :
+        Total products = 3
+        Total time taken = 61ms
+    Junit Test SnapShot: http://htmlpreview.github.com/?https://github.com/NCHAN3/reis/blob/master/images/JuntTestResults.html
 
 SECTION 4:
 
